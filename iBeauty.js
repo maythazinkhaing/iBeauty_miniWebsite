@@ -18,3 +18,17 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+function copyIt() {
+  var range = document.createRange();
+  range.selectNode(document.getElementById("phn"));
+  window.getSelection().removeAllRanges(); 
+  window.getSelection().addRange(range); 
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+}
+
+//Tooltip
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
